@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# ==================================================
+# FORÇAR HTTPS (dinâmico)
+# ==================================================
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ==================================================
+# 🔥 URL AMIGÁVEL PARA EBOOK
+# /ebook/nome-do-ebook
+# ==================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ebook/([a-zA-Z0-9_-]+)$ ebook/ebook.php?n=$1 [L,QSA]
+
+# ==================================================
+# REESCRITA AUTOMÁTICA PARA .php
+# ==================================================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# ==================================================
+# ERROR 404
+# ==================================================
+ErrorDocument 404 /404.php

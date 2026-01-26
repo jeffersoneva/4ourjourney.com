@@ -1,0 +1,148 @@
+html,body{
+    background-image: url('../img/bg.avif');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.container-login{
+    min-height: 100vh;
+    width:92%;
+    max-width:1200px;
+    margin:0 auto;
+    position:relative;
+}
+.auth-section{
+    width: 100%;
+    background-color: rgba(255,255,255,.75);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
+}
+.auth-left {
+    width: calc(100% - 4rem);
+    height: calc(100% - 2rem);
+    padding: 1rem 2rem;
+    flex: 1;
+    text-align:center;
+}
+.auth-left img {
+    max-width: 33%;
+    margin: 1.5rem auto;
+}
+.home-cont{
+    width: 100%;
+}
+.home-cont h1 {
+    color: var(--primary-1);
+    margin: 0 auto 1.5rem auto;
+}
+.home-cont p {
+    color: var(--primary-1);
+    margin-bottom: 1rem;
+}
+.auth-right {
+    width: 420px;
+}
+.login-form {
+    width: calc(100% - 1px);
+    border-left: 1px solid var(--primary-5);
+    max-width: 360px;
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 16px;
+}
+.login-form h2 {
+    text-align: center;
+    color: var(--primary-1);
+}
+.login-form input {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--light-4);
+}
+.login-form button {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary-1);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background: var(--primary-2);
+}
+.register-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--dark-3);
+}
+.register-link a {
+    color: var(--primary-1);
+    text-decoration: none;
+    font-weight: 600;
+}
+.footer-links {
+    width: 100%;
+    background: var(--primary-4);
+    padding: 1rem 0;
+}
+.footer-links {
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    color: var(--primary-1);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.footer-separator {
+    color: var(--primary-1);
+}
+.footer{
+    width: 100%;
+    padding: 1rem 0;
+    color: var(--light-1);
+    background: var(--primary-1);
+    user-select: none;
+    cursor:cell;
+}
+@media only screen and (max-width:960px) {
+    .container-login{
+        width:100%;
+        height: 100%;
+        min-height: 100%;
+        padding:0;
+    }
+    .auth-section{
+        flex-direction:column;
+        border-radius:0;
+        box-shadow:none;
+    }
+    .auth-left{
+        width:100%;
+        padding:2rem 0;
+        text-align:center;
+    }
+    .auth-left img{
+        max-width:220px;
+        margin:0 auto 1.5rem auto;
+    }
+    .auth-left h1{
+        margin-bottom:1rem;
+    }
+    .auth-left p{
+        max-width:420px;
+        margin:0 auto;
+        font-size:.9rem;
+    }
+    .auth-right{
+        width:100%;
+        padding:0 0 2rem 0;
+    }
+    .login-form{
+        max-width:100%;
+        border-left:none;
+        border-top:1px solid var(--primary-5);
+        padding-top:2rem;
+    }
+}
