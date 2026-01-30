@@ -4,8 +4,10 @@
     require_once ("../conn/Conn.Class.php");
     $conn = new Conn("4ourjourney");
 
-   /*  require_once ("./class/Login.Class.php");
-    $login = new Login($conn->Connect()); */
+    require_once ("./class/Login.Class.php");
+    $login = new Login($conn->Connect());
+
+    $login->Security();
 
     $v = rand(0, 9999);
 

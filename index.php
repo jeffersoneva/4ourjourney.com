@@ -1,1 +1,1 @@
-<?php header("Location: ./feed"); exit;
+<?php header("Location: ./auth/"); exit;

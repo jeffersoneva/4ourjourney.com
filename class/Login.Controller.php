@@ -7,20 +7,21 @@
         // =====================================================
 
         public function verifyEmail(string $email): bool;
-        public function registerUser(array $data): array;
         public function logUser(array $data): array;
-        public function returnLogUser(int $id): bool;
-        public function Security(): array;
+        public function redirectIfAuthenticated(): void;
         public function sessionDestroy(): bool;
-        public function resetPassword(array $data): array;
+        public function Security(): void;
 
         // =====================================================
         // MÉTODOS PÚBLICOS (INTERFACE)
         // =====================================================
 
+        public function Id(): ?int;
         public function Email(): ?string;
-        public function Name(): ?string;
-        public function Photo(): ?string;
+        public function Pass(): ?string;
+        public function Attempts(): ?int;
+        public function Situation(): ?int;
+        public function FkUser(): ?int;
     }
 
 ?>

@@ -10,7 +10,7 @@
         private function responseSpan(string $status, string $id, string $text): array {
             return [
                 'status' => $status,
-                'message' => '<span id="' . $id . '">' . $text . '</span>'
+                'message' => '<span id="'.$id.'">'.$text.'</span>'
             ];
         }
 
@@ -149,27 +149,27 @@
 
         // --- NOTIFICAÇÃO DE CADASTRO ---
         private function notifyRegister(string $email, string $nome): void {
-            $sent = $this->sendEmail('Parabéns <b>'.$nome.'</b>, seu cadastro foi efetuado com sucesso!',$email,$nome,'user-register.php');
-            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Cadastro | {$email}");
+            /* $sent = $this->sendEmail('Parabéns <b>'.$nome.'</b>, seu cadastro foi efetuado com sucesso!',$email,$nome,'user-register.php');
+            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Cadastro | {$email}"); */
         }
 
         // --- NOTIFICAÇÃO DE LOGIN ---
-        private function notifyLogin(string $email, string $nome): void {
-            $sent = $this->sendEmail('Olá <b>'.$nome.'</b>, você acabou de fazer login no site Web Site de Jefferson Eva. Avise-nos se não foi você.',$email,$nome,'user-login.php');
-            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Login | {$email}");
+        private function notifyLogin(string $email): void {
+            /* $sent = $this->sendEmail('Você acabou de fazer login no site Web Site de Jefferson Eva. Avise-nos se não foi você.',$email,$nome,'user-login.php');
+            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Login | {$email}"); */
         }
 
         // --- NOTIFICAÇÃO DE COMPRA DE LIVRO ---
         private function notifyBookApproved(string $email, int $bookId): void {
-            $sent = $this->sendEmail('Seu pagamento foi aprovado e você já pode aproveitar o conteúdo adquirido!',$email,'','user-book-approved.php');
-            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Aquisição de Livro ({$bookId}) | {$email}");
+            /* $sent = $this->sendEmail('Seu pagamento foi aprovado e você já pode aproveitar o conteúdo adquirido!',$email,'','user-book-approved.php');
+            $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Aquisição de Livro ({$bookId}) | {$email}"); */
         }
 
         // --- NOTIFICAÇÃO DE ALTERAÇÃO DE SENHA ---
         private function notifyAlterPassword(string $email, string $nome, string $newPass): bool {
-            $sent = $this->sendEmail('Sua senha foi alterada com sucesso.<br /> Esta é a sua nova senha temporária:<br /> <b style="font-size:20pt;">'.$newPass.'</b>',$email,'','user-reset-password.php');
+           /*  $sent = $this->sendEmail('Sua senha foi alterada com sucesso.<br /> Esta é a sua nova senha temporária:<br /> <b style="font-size:20pt;">'.$newPass.'</b>',$email,'','user-reset-password.php');
             $this->logMail($sent ? 'SUCCESS' : 'ERROR',"Redefinição de senha | {$email}");
-            return $sent;
+            return $sent; */
         }
 
         // =====================================================

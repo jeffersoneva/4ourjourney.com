@@ -16,14 +16,29 @@ const translations = {
         "home-p-3" : "Se você acredita que relacionamentos são construídos com constância, presença e intenção, este é o lugar para caminhar juntos.",
         "home-cta" : "👉 Crie sua conta e faça parte da nossa comunidade.",
 
-        "form-login-email" : "Seu email",
-        "form-login-senha" : "Sua senha",
-        "form-login-submit" : "Entrar",
-        "form-login-register" : "Não tem conta? <a href='#'>Cadastre-se</a>",
+        // FORM CADASTRO
+        "fc-h2" : "CADASTRO",
+        "fc-name-1" : "Seu nome",
+        "fc-name-2" : "Nome do(a) conjugue",
+        "fc-email" : "Seu melhor email",
+        "fc-senha" : "Crie uma senha",
+        "fc-resenha" : "Redigite sua senha",
+        "fc-submit" : "CADASTRAR",
+        "fc-footer" : "Já poussi conta? <a href='#' class='form-login'>Entrar</a>",
+
+        // FORM LOGIN
+        "fl-h2" : "ENTRAR",
+        "fl-email" : "Seu email",
+        "fl-senha" : "Digite sua senha",
+        "fl-submit" : "ENTRAR",
+        "fl-footer" : "Ainda não tem uma conta? <a href='#' class='form-cadastro'>Cadastrar</a>",
 
         //FOOTER LINKS
         "footer-politica-de-privacidade" : "Política de Privacidade",
         "footer-termos-de-uso" : "Termos de Uso",
+
+        //BOTÃO DE IDIOMA
+        "alter-language" : "Idioma",
 
     },
 
@@ -43,14 +58,29 @@ const translations = {
         "home-p-3" : "If you believe that relationships are built with consistency, presence, and intention, this is the place to walk together.",
         "home-cta" : "👉 Create your account and join our community.",
 
-        "form-login-email" : "Your email",
-        "form-login-senha" : "Your password",
-        "form-login-submit" : "Sign in",
-        "form-login-register" : "Don't have an account? <a href='#'>Sign up</a>",
+        // FORM SIGN UP
+        "fc-h2" : "SIGN UP",
+        "fc-name-1" : "Your name",
+        "fc-name-2" : "Spouse's name",
+        "fc-email" : "Your best email",
+        "fc-senha" : "Create a password",
+        "fc-resenha" : "Confirm your password",
+        "fc-submit" : "SIGN UP",
+        "fc-footer" : "Already have an account? <a href='#' class='form-login'>Sign in</a>",
+
+        // FORM LOGIN
+        "fl-h2" : "SIGN IN",
+        "fl-email" : "Your email",
+        "fl-senha" : "Enter your password",
+        "fl-submit" : "SIGN IN",
+        "fl-footer" : "Don't have an account yet? <a href='#' class='form-cadastro'>Sign up</a>",
 
         //FOOTER LINKS
         "footer-politica-de-privacidade" : "Privacy Policy",
         "footer-termos-de-uso" : "Terms of Use",
+
+        //BOTÃO DE IDIOMA
+        "alter-language" : "Language",
 
     }
 

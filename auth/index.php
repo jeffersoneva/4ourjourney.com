@@ -1,9 +1,19 @@
 <?php
 
-   /* AQUI PRECISO CRIAR UMA VERIFICAÇÃO DE USUÁRIO LOGADO > FEED */
+    require_once ("../config/Session.Config.php");
+    require_once ("../../conn/Conn.Class.php");
+    $conn = new Conn("4ourjourney");
+
+    require_once ("../class/Login.Class.php");
+    $login = new Login($conn->Connect());
+
+    // 🔐 Se já estiver logado → feed
+    $login->redirectIfAuthenticated();
+
     $v = rand(0, 9999);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -44,8 +54,8 @@
 
         <script defer src="../assets/js/jquery.js" type="text/javascript"></script>
         <script defer src="../assets/js/default.js" type="text/javascript"></script>
-        <script defer src="../assets/js/functions.js?version=<?= $v; ?>" type="text/javascript"></script>
         <script defer src="../assets/js/langs.js" type="text/javascript"></script>
+        <script defer src="../assets/js/functions.js?version=<?= $v; ?>" type="text/javascript"></script>
         <script defer src="../assets/js/SmoothScroll.js" type="text/javascript"></script>
 
         <link rel="icon" href="../assets/img/favicons/favicon-16.png" sizes="16x16" type="image/png">
@@ -94,40 +104,23 @@
             </div>
         </div>
 
-        <div class="alter-language">
-            <div class="language-switch">
-                <span class="lang-label">PT</span>
-                <input type="checkbox" id="lang-toggle">
-                <label for="lang-toggle" class="switch"></label>
-                <span class="lang-label">EN</span>
-            </div>
-        </div>
-
         <div class="container-login flex-center-center">
 
             <div class="auth-section flex-center-between">
                 <div class="auth-left">
-                    <img src="../assets/img/logo-loading.svg" alt="Imagem de boas-vindas">
-                    <div class="home-cont">
-                        <h1 id="home-h1">4ourjourney is a community for couples who have decided to invest in their relationship every day.</h1>
-                        <p id="home-p-1" class="txt-small">Here, you can share real experiences, exchange ideas, learn from other couples, and grow together—in body, mind, and life.</p>
-                        <p id="home-p-2" class="txt-small">In “Daily”, our administrators publish daily content with readings, music, nutrition, training, reflections, and biblical passages, designed to strengthen the couple's routine, connection, and purpose.</p>
-                        <p id="home-p-3" class="txt-small">If you believe that relationships are built with consistency, presence, and intention, this is the place to walk together.</p>
-                        <p id="home-cta">👉 Create your account and join our community.</p>
+                    <div class="flex-center-center">
+                        <img src="../assets/img/logo-loading.svg" alt="Imagem de boas-vindas">
+                    </div>
+                    <div class="home-cont txt-center">
+                        <h1 id="home-h1">4ourjourney é uma comunidade para casais que decidiram investir em seu relacionamento todos os dias.</h1>
+                        <p id="home-p-1" class="txt-small">Aqui, você pode compartilhar experiências reais, trocar ideias, aprender com outros casais e crescer juntos — em corpo, mente e vida.</p>
+                        <p id="home-p-2" class="txt-small">No “Daily”, nossos administradores publicam conteúdos diários com leituras, músicas, nutrição, treinos, reflexões e passagens bíblicas, pensados para fortalecer a rotina, a conexão e o propósito do casal.</p>
+                        <p id="home-p-3" class="txt-small">Se você acredita que relacionamentos são construídos com constância, presença e intenção, este é o lugar para caminhar juntos.</p>
+                        <p id="home-cta" class="txt-small">👉 Crie sua conta e faça parte da nossa comunidade.</p>
                     </div>
                 </div>
-
                 <div class="auth-right flex-center-center">
-                    <form class="login-form flex-center-center">
-                        <h2>LOGIN</h2>
-
-                        <input type="email" placeholder="Seu email" maxlength="50" id="form-login-email" required>
-                        <input type="password" placeholder="Sua senha" maxlength="50" id="form-login-senha" required>
-
-                        <button type="submit"><span id="form-login-submit">Entrar</button>
-
-                        <span class="register-link" id="form-login-register">Não tem conta? <a href='#'>Cadastre-se</a></span>
-                    </form>
+                    <img src="../assets/img/loading.gif" width="64" alt="Loaging form" />
                 </div>
             </div>
 
@@ -143,6 +136,12 @@
                     <a href="#" id="footer-terms-link">
                         <span id="footer-termos-de-uso">Termos de Uso</span>
                     </a>
+                    <span class="footer-separator">•</span>
+                    <label for="lang-select" id="alter-language">Idioma</label>
+                    <select class="alter-language" id="lang-select">
+                        <option value="en">English</option>
+                        <option value="pt">Português</option>
+                    </select>
                 </nav>
             </div>
         </div>
